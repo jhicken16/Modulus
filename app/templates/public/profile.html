@@ -1,0 +1,25 @@
+{% extends 'public/templates/public_template.html'%}
+
+{% block title %}Profile{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Profile</h1>
+        </div>    
+        <div class="col">
+            <h2>Models from - {{user_name["username"]}}</h2>
+        </div> 
+        <hr>
+    </div>
+
+    
+
+
+</div>
+{% endblock%}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/test.js') }}" type="module"></script>
+{% endblock%}

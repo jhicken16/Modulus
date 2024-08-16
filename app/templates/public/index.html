@@ -1,0 +1,84 @@
+{% extends 'public/templates/public_template.html'%}
+{% block meta %}
+<meta id="data" data="{{mod}}">
+{% endblock %}
+{% block title %}Home{% endblock %}
+
+{% block main %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Home</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row" id="main-row">
+        <div class="col-2" id="left">
+            <div class="mb-3">
+                <label  class="form-label">Name your model</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Describe</label>
+                <textarea type="text" class="form-control" cols="30" rows="3" id="description"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <div id="emailHelp" class="form-text">When you subit this form a screen shot will be taken of your from your cameras perspective. Please ajust the position of your camera so your model is visible</div>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-secondary" style="border: 2px solid black" id="submit-btn">Submit</button>
+            </div>
+            
+        </div>
+        <div class="col-8" id="main">
+            
+            <div id="blocker">
+
+                <div id="instructions">
+                    
+                    <button class="btn btn-secondary" id="play" style="border: 2px solid black">play</button>
+                    
+                    <p>
+                        Move around: WASD<br/>
+                        Move up: SPACE<br/>
+                        Move down: SPACE<br/>
+                        Look: MOUSE
+                    </p>
+                </div>
+            
+            </div>
+
+            <div id="canvas_container">
+                <div id="ui">
+                    <p>.</p>
+                </div>
+                <canvas class="game"></canvas>    
+            </div>
+            
+        </div>
+        <div class="col-2" id="right">
+            <h2>Your Image</h2>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-secondary" id="screenshot" style="border: 2px solid black">screen shot</button>
+            </div>
+            <div id="blobplace"></div> 
+            <div id="emailHelp" class="form-text">The last screen shot you take is the one that will be saved.</div>   
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock%}
+
+{% block scripts %}
+
+<script src="{{ url_for('static', filename='js/three/main.js') }}" type="module"></script>
+
+{% endblock %}
